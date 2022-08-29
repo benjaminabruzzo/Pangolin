@@ -74,7 +74,7 @@ void SavePacked12bit(const Image<unsigned char>& image, const pangolin::PixelFor
 TypedImage LoadLibRaw(const std::string& filename);
 
 // TIFF
-TypedImage LoadTiff(const std::string& filename);
+// TypedImage LoadTiff(const std::string& filename);
 
 TypedImage LoadImage(std::istream& in, ImageFileType file_type)
 {
@@ -122,8 +122,8 @@ TypedImage LoadImage(const std::string& filename, ImageFileType file_type)
         return LoadPango(filename);
     case ImageFileTypeArw:
         return LoadLibRaw(filename);
-    case ImageFileTypeTiff:
-        return LoadTiff(filename);
+    // case ImageFileTypeTiff:
+    //     return LoadTiff(filename);
     default:
         throw std::runtime_error("Unsupported image file type, '" + filename + "'");
     }
